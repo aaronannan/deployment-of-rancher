@@ -14,6 +14,11 @@ instance_type = "t2.micro"
    Name = "Rancher"
   }
 
+   
+provisioner "local-exec" {
+   command = "echo ${aws_instance.rancher.private_ip} >> private_ips.txt"
+   }
+   
    provisioner "file" {
     source      = "rancher.sh"
     destination = "/tmp/rancher.sh"
@@ -28,9 +33,6 @@ instance_type = "t2.micro"
    
 }
 
-provisioner "local-exec" {
-   command = "echo ${aws_instance.rancher.private_ip} >> private_ips.txt"
-   }
    
 output "ip" {
  value = ${aws_instance.rancher.public_ip}"
