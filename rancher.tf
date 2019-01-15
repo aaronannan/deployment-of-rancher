@@ -9,6 +9,10 @@ region = us-east-1
 resource "aws_instance" "rancher" {
 ami = "ami-06af601d319a5b99b"
 instance_type = "t2.micro"
+   
+   tags = {
+   Name = "Rancher"
+  }
 
    provisioner "file" {
     source      = "rancher.sh"
@@ -22,11 +26,6 @@ instance_type = "t2.micro"
     ]
   }
    
-   
-   
-tags = {
-   Name = "Rancher"
-  }
 }
 
 provisioner "local-exec" {
