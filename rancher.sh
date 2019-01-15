@@ -21,6 +21,6 @@ sudo add-apt-repository \
 
 sudo apt-get update
 
-sudo apt-get install docker-ce
+sudo apt-get install -y docker-ce
+sudo docker run -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher:latest
 
-sudo docker run hello-world
