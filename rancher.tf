@@ -18,7 +18,7 @@ output "ip" {
  value = ${aws_instance.rancher.public_ip}"
  }
  
- tag "name" {
-  value = "Rancher"
+ tags = {
+   Name = "Rancher"
   }
    
