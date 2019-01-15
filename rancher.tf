@@ -1,7 +1,7 @@
 provider "aws" {
 
-access_key = "AKIAIW4OYMKDT5GEXIBA"
-secret_key = "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"
+access_key = ""
+secret_key = ""
 region = us-east-1
 
 tags = {
